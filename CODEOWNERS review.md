@@ -1,0 +1,44 @@
+</details>
+
+<details>
+   <summary> <strong> Task 1:  </strong> </summary>
+  
+  # Enforce CODEOWNERS review
+
+If you want to enforce certain teams can only approve parts of the codebase, like a web development team for all the web application code and a testing team for the testing, you can use the code owners file. We can enforce the code owners need to be part of the review process by adding this to the Branch Protection Rule.
+CODEOWNER file has the following contents:
+
+```
+# Example, any change in this repo 
+# will require approval from @username
+# * @username
+
+# Any change inside the `/Pages` directory
+# will require approval from anyone in the organization fluentbytes and the team docsteam
+# /Pages @username
+# Create your own rules below this line without the # sign
+```
+Now change the file so it defines the folder `/Pages` has a user as the owner. 
+  
+ After setting up the file, commit it to the main branch.
+Next go to the branch protection rules and for the main branch select the option `Require review from Code Owners`
+
+Save the branch protection rule and make a change to e.g. the Sample.txt file and see if you can commit the changes to the main branch. Ask one of the Collegue to review the pull request you created and see if it then is allowed to approve and merge the pull request. 
+
+</details>
+
+<details>
+   <summary> <strong> Task 2:  </strong> </summary>  
+
+ 
+  Create .gitignore file to prevent .vs/ folder to be pushed  to remote repository from your local machine
+
+  
+  $ vim .gitignore  # Add .vs/ to the first line
+  
+  $ git rm -r --cached .vs/
+  
+  $ git commit -m "Ignoring Files"
+  
+  $ git push
+  
